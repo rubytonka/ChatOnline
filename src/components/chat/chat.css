@@ -1,0 +1,207 @@
+.chat {
+    flex: 2;
+    border-left: 1px solid #dddddd35;
+    border-right: 1px solid #dddddd35;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .top {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #dddddd35;
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            .texts {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                span {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: #a5a5a5;
+                }
+            }
+        }
+
+        .icons {
+            display: flex;
+            gap: 20px;
+
+            img {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+    .center {
+        
+        padding: 20px;
+        flex: 1;
+        overflow:scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+       
+    
+        .message{
+            max-width: 70%;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            white-space: pre-wrap;
+    
+            &.own{
+                align-self: flex-end;
+
+                .texts{ 
+                    p {
+                    background-color: #5183fe;
+                    color: white;
+                }
+            }
+        }
+    
+            
+            img{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: cover ;
+            }
+            .texts{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                img {
+                    max-width: 100%; /* Menjaga gambar tetap responsif */
+                    max-height: 250px; /* Batasi tinggi agar tidak terlalu besar */
+                    width: auto; /* Biarkan lebar mengikuti aspek rasio */
+                    height: auto; /* Biarkan tinggi mengikuti aspek rasio */
+                    border-radius: 10px; /* Membuat sudut lebih halus */
+                    object-fit: contain; /* Pastikan gambar tidak terpotong */
+                    display: block; /* Hindari extra spacing yang tidak perlu */
+                }
+
+                p{
+                    padding: 20px;
+                    background-color: rgba(17, 25, 40, 0.3);
+                    border-radius: 10px;
+                    
+                }
+                span {
+                    font-size: 12px;
+                    color: #a5a5a5;
+                    align-self: flex-end;
+                }
+            }
+        }
+    }
+
+    
+
+    .bottom {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border-top: 1px solid #dddddd35;
+        margin-top: auto;
+
+        .icons {
+            display: flex;
+            gap: 20px;
+
+            img {
+                width: 18px; /* Ukuran lebih kecil */
+                height: 18px; /* Menjaga proporsi */
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+
+            img:hover {
+                transform: scale(1.1); /* Efek hover sedikit membesar */
+            }
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(17, 25, 40, 0.5);
+            color: white;
+            font-size: 16px;
+
+            &:disabled{
+                background-color: #5183feb4;
+                cursor: not-allowed;
+                
+            }
+        }
+
+        .picker {
+            position: absolute;
+            bottom: 60px;
+            right: 50px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            z-index: 10;
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .picker.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .emoji {
+            img {
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .sendButton {
+            padding: 10px 20px;
+            background-color: #5183fe;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:disabled{
+                background-color: #5183feb4;
+                cursor: not-allowed;
+
+            }
+        }
+    }
+}

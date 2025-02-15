@@ -1,0 +1,129 @@
+.chatList {
+    flex: 1;
+    overflow: scroll;
+
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 5px;
+    margin-left: 5px; /* Mengurangi margin kiri agar lebih dekat ke kiri */
+    padding: 6px 8px; /* Menurunkan padding untuk ruang yang lebih kecil */
+    border-radius: 10px;
+    width: 100%; /* Memastikan lebar penuh */
+    max-width: 265px; /* Membuat lebar maksimal lebih kecil */
+    background: rgba(255, 255, 255, 0.1); /* Efek transparan */
+}
+
+userInfo {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .searchBar {
+    flex: 1;
+    background-color: rgba(17, 25, 40, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Mengurangi jarak antara ikon dan input */
+    border-radius: 10px;
+    padding: 6px; /* Menurunkan padding untuk ruang yang lebih kecil */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px; /* Lebar maksimal lebih kecil di layar sempit */
+}
+
+.searchBar input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    flex: 1;
+    font-size: 14px; /* Mengurangi ukuran font agar lebih kecil */
+    font-family: Arial, sans-serif;
+}
+
+.searchBar img {
+    width: 18px; /* Menurunkan ukuran ikon pencarian */
+    height: 18px;
+}
+
+.add {
+    width: 36px; /* Ukuran tombol tambah */
+    height: 36px;
+    background-color: rgba(17, 25, 40, 0.8);
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profile {
+    display: flex;
+    align-items: center; /* Vertikal rata tengah */
+    gap: 10px; /* Jarak antara lingkaran profil dan teks */
+}
+
+.profile img {
+    width: 40px; /* Ukuran lingkaran "A" */
+    height: 40px;
+    border-radius: 50%; /* Membuat lingkaran sempurna */
+}
+
+.profile .name {
+    font-size: 18px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold; /* Tulisan John Doe lebih menonjol */
+}
+
+@media (max-width: 768px) {
+    .search {
+        margin-left: 10px; /* Kurangi margin kiri di layar kecil */
+        gap: 5px; /* Jarak antar elemen lebih kecil */
+    }
+
+    .searchBar {
+        max-width: 300px; /* Batas lebar lebih kecil di layar sempit */
+    }
+
+    .add {
+        width: 30px; /* Ukuran tombol tambah lebih kecil */
+        height: 30px;
+    }
+}
+.item{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #dddddd35;
+
+    img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .texts{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        span{
+            font-weight: 500;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 30;
+        }
+    }
+}
